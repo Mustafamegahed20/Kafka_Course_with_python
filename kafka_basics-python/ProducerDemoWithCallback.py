@@ -16,7 +16,10 @@ def main():
     # Configure the Kafka producer
     producer_conf = {
         'bootstrap.servers': 'localhost:9092',
-        'client.id': 'python-producer'
+        'client.id': 'python-producer',
+        'acks': 'all',  # This ensures that the producer waits for acknowledgment from all replicas before considering a message as sent.
+        'key.serializer': 'org.apache.kafka.common.serialization.StringSerializer',
+        'value.serializer': 'org.apache.kafka.common.serialization.StringSerializer'
     }
 
     # Create producer instance
