@@ -17,9 +17,9 @@ def main():
     producer_conf = {
         'bootstrap.servers': 'localhost:9092',
         'client.id': 'python-producer',
-        'acks': 'all',  # This ensures that the producer waits for acknowledgment from all replicas before considering a message as sent.
-        'key.serializer': 'org.apache.kafka.common.serialization.StringSerializer',
-        'value.serializer': 'org.apache.kafka.common.serialization.StringSerializer'
+        'acks': 'all',
+        # 'key.serializer': 'org.apache.kafka.common.serialization.StringSerializer',
+        # 'value.serializer': 'org.apache.kafka.common.serialization.StringSerializer'
     }
 
     # Create producer instance
@@ -28,7 +28,7 @@ def main():
     for j in range(10):
         
             # Produce a message
-        producer.produce('demo_java', value=f'hello world {j}', callback=delivery_report)
+        producer.produce('demo_python', value=f'hello world {j}', callback=delivery_report)
 
         sleep(1)
 
