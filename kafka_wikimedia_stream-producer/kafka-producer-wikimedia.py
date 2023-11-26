@@ -22,7 +22,7 @@ class WikimediaChangeHandler:
             logging.error(f"Error producing message to Kafka: {e}")
 
     def on_error(self, error):
-        logging.error(f"Error in Stream Reading: {error}0000000000000000000000000000000000000000000000000000000000000000000000000
+        logging.error(f"Error in Stream Reading: {error}")
 
 def main():
     # Configure logging
@@ -33,9 +33,7 @@ def main():
         'bootstrap.servers': '127.0.0.1:9092',
         'client.id': 'python-producer',
         'acks': 'all',
-        'compression.type': 'snappy',  # Added compression type
-        'linger.ms': 20,  # Added linger time in milliseconds
-        'batch.size': 16384  # Added batch size in bytes (16 KB)
+        
         
     }
 
