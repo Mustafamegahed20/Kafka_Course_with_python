@@ -16,7 +16,6 @@ def create_kafka_consumer():
         'bootstrap.servers': '127.0.0.1:9092',
         'group.id': 'consumer-opensearch-demo',
         'auto.offset.reset': 'latest',
-        'enable.auto.commit': False,
 
     }
     return Consumer(conf)
