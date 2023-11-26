@@ -18,6 +18,7 @@ def main():
         'bootstrap.servers': 'localhost:9092',
         'client.id': 'python-producer',
         'acks': 'all',
+        'partitioner': 'consistent_random', 
         # 'key.serializer': 'org.apache.kafka.common.serialization.StringSerializer',
         # 'value.serializer': 'org.apache.kafka.common.serialization.StringSerializer'
     }
